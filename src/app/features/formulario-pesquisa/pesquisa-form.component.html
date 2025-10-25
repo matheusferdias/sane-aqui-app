@@ -1,0 +1,60 @@
+<mat-card class="form-card">
+  <mat-card-header>
+    <mat-card-title>Sane Aqui</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" #saneamentoForm="ngForm" class="form-container">
+
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input matInput type="text" required [(ngModel)]="model.cpf" name="cpf">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Endereço</mat-label>
+        <input matInput type="text" required [(ngModel)]="model.endereco" name="endereco">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Bairro</mat-label>
+        <input matInput type="text" required [(ngModel)]="model.bairro" name="bairro">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Cidade</mat-label>
+        <input matInput type="text" required [(ngModel)]="model.cidade" name="cidade">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <input matInput type="text" required [(ngModel)]="model.estado" name="estado">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Número de Moradores</mat-label>
+        <input matInput type="number" required [(ngModel)]="model.numeroMoradoresResidencia" name="numeroMoradores">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Possui Saneamento Básico?</mat-label>
+        <mat-select required [(ngModel)]="model.possuiSaneamento" name="saneamento">
+          <mat-option value="true">Sim</mat-option>
+          <mat-option value="false">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Possui Fornecimento de Água Tratada?</mat-label>
+        <mat-select required [(ngModel)]="model.possuiAguaTratada" name="agua">
+          <mat-option value="true">Sim</mat-option>
+          <mat-option value="false">Não</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!saneamentoForm.form.valid">
+        Submeter
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
